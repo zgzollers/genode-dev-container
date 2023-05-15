@@ -1,0 +1,8 @@
+[submodule "genode"]
+	path = genode
+	url = https://github.com/genodelabs/genode
+	branch = 23.02
+[submodule "goa"]
+	path = goa
+	url = https://github.com/genodelabs/goa
+	branch = 23.04
