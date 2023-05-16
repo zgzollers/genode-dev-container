@@ -7,7 +7,6 @@ ARG JOBS=4
 #
 # Install custom Genode toochain
 #
-ENV GENODE_DIR=/genode
 ENV GENODE_DEPS="make libncurses5-dev texinfo libexpat-dev gnat wget \
                  libsdl1.2-dev tclsh expect byacc qemu xorriso autoconf2.64 \
                  autogen bison flex g++ git gperf libxml2-utils \
@@ -17,12 +16,12 @@ RUN apt update && \
     apt install -y ${GENODE_DEPS} && \
     apt clean
 
-COPY genode ${GENODE_DIR}
-WORKDIR ${GENODE_DIR}
+COPY genode /genode
+WORKDIR /genode
 
 RUN tool/tool_chain x86      SUDO= MAKE_JOBS=${JOBS} && \
     tool/tool_chain cleanall SUDO= MAKE_JOBS=${JOBS} && \
-    rm -rf ${GENODE_DIR}
+    rm -rf /genode
 
 WORKDIR /
 
