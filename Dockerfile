@@ -29,7 +29,7 @@ WORKDIR /
 # Install Goa workflow tool
 #
 ENV GOA_DIR=/usr/local/goa
-ENV GOA_DEPS="libsdl1.2-dev tclsh libxml2-utils"
+ENV GOA_DEPS="libsdl1.2-dev tclsh libxml2-utils gpg"
 
 RUN apt update && \
     apt install -y ${GOA_DEPS} && \
